@@ -1,0 +1,392 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap'); 
+
+*, *:before, *:after
+{
+    box-sizing: border-box;
+}
+
+*,
+*:focus,
+*:hover {
+    outline: none;
+}
+
+body {
+    margin: 3rem;
+    padding: 0;
+    font: 400 100%/1.5rem 'Roboto', sans-serif;
+    background: #f7f7f7;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #4285F4;
+    transition: color 0.3s, color 0.3s;
+}
+
+    a:hover {
+        color: #007bff;
+    }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+    header > div:first-child > h1 > span {
+        font-size: 3rem;
+        font-weight: 400;
+        color: #4285F4;
+    }
+
+    header > div:last-child {
+        text-align: right;
+    }
+
+
+#user-container {
+    display: flex;
+    gap: 2rem;
+}
+
+#user-list {
+    flex: 3 1 75%;
+    padding: 1.5rem 0;
+}
+
+#user-form {
+    flex: 1 1 25%;
+    padding: 2.5rem;
+    /*background-color: #f0f0f0;*/
+    /*border: 3px solid #4285F4;*/
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    padding: 2rem 0;
+    font-size: 0.75rem;
+}
+
+/**
+* form elements
+*
+*/
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+/**
+* custom form elements
+*
+*/
+.element {
+    position: relative;
+    margin-top: 2.5rem;
+    margin-inline: auto;
+    max-width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #fff;
+}
+
+    .element.required > label:after {
+        content: ' *';
+        color: #ff0000;
+    }
+
+    .element > input[type="text"] {
+        font-size: 1rem;
+        width: 100%;
+        padding: 23px 10px 7px 10px;
+        color: #010101;
+        border: none;
+        transition: border-color 250ms;
+        background-color: transparent;
+    }
+
+        .element > input[type="text"]:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        .element > input[type="text"]::placeholder {
+            color: transparent;
+        }
+
+        .element > input[type="text"]::-webkit-contacts-auto-fill-button {
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .element > input[type="text"]:focus + label:first-of-type,
+        .element > input[type="text"]:not(:placeholder-shown) + label:first-of-type {
+            transform: translateY(-50%) scale(0.80);
+        }
+
+        .element > input[type="text"] + label {
+            position: absolute;
+            top: 0.85rem;
+            left: 0.65rem;
+            color: #4285F4;
+            pointer-events: none;
+            transform-origin: left center;
+            transition: transform 250ms;
+            font-family: "Roboto", serif;
+        }
+
+            .element > input[type="text"] + label + span {
+                position: absolute;
+                left: 0.5rem;
+                bottom: -1.75rem;
+                color: #ff0000;
+                font-size: 0.9rem;
+            }
+
+    .element.select:after {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        top: 1.35rem;
+        border: 0.35rem solid #a7a7a7;
+        border-color: #a7a7a7 transparent transparent transparent;
+        transition: .4s all ease-in-out;
+    }
+
+    .element.select > ul {
+        display: none;
+    }
+
+    .element.select > input[type="text"]:focus ~ ul {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        max-height: 323px;
+        overflow-y: scroll;
+    }
+
+    .element.select:focus-within:after {
+        transform: rotate(-180deg);
+        top: 1rem;
+    }
+
+    .element.select > ul > li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0.5rem;
+        width: 100%;
+        border-top: 1px solid #aaa;
+        cursor: pointer;
+    }
+
+        .element.select > ul > li.active,
+        .element.select > ul > li:hover {
+            background: #e1f3ff;
+        }
+
+    .element.select > ul::-webkit-scrollbar {
+        width: 5px;
+        background-color: #575757;
+    }
+
+    .element.select > ul::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+    }
+
+    .element.select > ul::-webkit-scrollbar-thumb {
+        background-color: #555;
+    }
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+    .button-group button {
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+        .button-group button:hover {
+            background-color: #4C9AFF;
+            color: white;
+        }
+        .button-group button[name="submit"] {
+            background-color: #4285F4;
+            color: #fff;
+            border: 1px solid transparent;
+        }
+            .button-group button[name="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+        .button-group button[name="cancel"] {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+            .button-group button[name="cancel"]:hover {
+                background-color: transparent;
+                color: #007bff;
+                border-color: #007bff;
+            }
+
+/**
+* form
+*
+*/
+#user-form {
+    background: url('/images/palhub-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+form[name="user-form"] {
+    background: #f7f7f7;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20%);
+    transition: all 0.5s ease;
+}
+    form[name="user-form"].form-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+/** 
+* table 
+*
+*/
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+}
+
+    table th,
+    table td {
+        border-bottom: 1px solid #d9d9d9;
+        padding: 0.33rem 0.25rem;
+    }
+
+    table > thead > tr:first-of-type th > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+table caption {
+    text-align: left;
+}
+
+    table .sort-up {
+        display: inline-block;
+        padding: 0.10rem 0.55rem;
+        border: 1px solid #999;
+        border-left: none;
+    }
+
+    table .sort-down {
+        display: inline-block;
+        padding: 0.10rem 0.55rem;
+        border: 1px solid #999;
+    }
+
+    table .sort-up:hover,
+    table .sort-down:hover {
+        background-color: #4285F4;
+        color: #fff;
+    }
+
+    table > tfoot div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+    table > tbody > tr:hover {
+        position: relative;
+        background: #fff;
+        z-index: 1;
+    }
+
+
+/** 
+* pager 
+*
+*/
+ul.pager {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+    ul.pager li {
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+    }
+
+        ul.pager li a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: #333;
+        }
+
+        ul.pager li.active {
+            border-radius: 4px;
+            background-color: #4285F4;
+            color: #fff;
+            border-color: #4285F4;
+        }
+
+.row-highlight {
+    animation: highlight 2s forwards;
+}
+
+@keyframes highlight {
+    from {
+        background-color: #4285F4;
+    }
+
+    to {
+        background-color: #f7f7f7;
+    }
+}

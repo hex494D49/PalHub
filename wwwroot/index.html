@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PalHub</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/app.js" asp-append-version="true"></script>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1><span>Pal</span>Hub</h1>
+        </div>
+        <div>
+            <a href="#">Hrvatski</a>&nbsp;|&nbsp;<a href="#">English</a>
+        </div>
+    </header>
+
+    <main>
+
+        <div id="user-container">
+            <div id="user-form">
+                <form name="user-form">
+                    <input type="hidden" name="method" value="" />
+                    <input type="hidden" name="Id" value="" />
+
+                    <h3>Add a new contact to PalHub</h3>
+
+                    <div class="element text required">
+                        <input type="text" name="FirstName" id="FirstName" value="" placeholder="First Name" autocomplete="off" />
+                        <label for="FirstName">First Name</label>
+                        <span class="error"></span>
+                    </div>
+                    <div class="element text required">
+                        <input type="text" name="LastName" id="LastName" value="" placeholder="Last Name" autocomplete="off" />
+                        <label for="LastName">Last Name</label>
+                        <span class="error"></span>
+                    </div>
+                    <div class="element text">
+                        <input type="text" name="Email" id="Email" value="" placeholder="Email" autocomplete="off" />
+                        <label for="Email">Email</label>
+                        <span class="error"></span>
+                    </div>
+                    <div class="response"></div>
+                    <div class="button-group">
+                        <button type="button" name="cancel">Cancel</button>
+                        <button type="button" name="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div id="user-list"></div>
+        </div>
+
+    </main>
+
+    <footer>
+        Crafted by <a href="mailto:hex494D49@gmail.com">Ngadhnjim Istrefi</a>
+    </footer>
+
+</body>
+</html>

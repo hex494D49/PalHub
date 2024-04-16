@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PalHub.Application\PalHub.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\UserController_en.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UserController_en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\UserController_hr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UserController_hr.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\UserController_en.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>UserController_en.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resources\UserController_hr.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>UserController_hr.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>
